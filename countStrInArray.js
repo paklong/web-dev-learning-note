@@ -1,8 +1,13 @@
+//function countStr(arr) {
+//  if (arr.length == 0) return 0;
+//  return arr[0].length + countStr(arr.slice(1));
+//}
 function countStr(arr) {
-  if (arr.length == 0) return 0;
-  return arr[0].length + countStr(arr.slice(1));
+  if (arr.length === 0) return 0;
+  let count = countStr(arr.slice(1));
+  count += arr[0].length;
+  return count;
 }
-
 
 function test() {
   const test1 = ['ab', 'c', 'def', 'ghij'];
