@@ -3,10 +3,13 @@
 //  return shortestPath(row - 1, col) + shortestPath(row, col - 1)
 //}
 
-function shortestPath(row, col) {
+function shortestPath(row, col, memo = {}) {
   if (row === 1 || col === 1) return 1;
-  let total = shortestPath(row - 1, col) + shortestPath(row, col - 1)
-  return total
+  const key = row > col ? row.toString() + col.toString() : col.toString() + row.toString()
+  if (!memo[key]) {
+    memo[key] = shortestPath(row - 1, col) + shortestPath(row, col - 1)
+  }
+  return memo[key]
 }
 
 // This is a solution without recurion
