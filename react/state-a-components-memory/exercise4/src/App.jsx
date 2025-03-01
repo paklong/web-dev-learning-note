@@ -1,11 +1,9 @@
-import { useState } from 'react'
 import './App.css'
 
-export default function App() {
-  const [name, setName] = useState('');
+export default function() {
 
   function handleClick() {
-    setName(prompt('What is your name?'));
+    const name = (prompt('What is your name?'));
     alert(`Hello, ${name}!`);
   }
 
